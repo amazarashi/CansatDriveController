@@ -13,10 +13,10 @@ PIN3 = 13
 #p3
 PIN4 = 23
 #p4
-# GPIO.setup(PIN1, GPIO.OUT)
-# GPIO.setup(PIN2, GPIO.OUT)
-# GPIO.setup(PIN3, GPIO.OUT)
-# GPIO.setup(PIN4, GPIO.OUT)
+GPIO.setup(PIN1, GPIO.OUT)
+GPIO.setup(PIN2, GPIO.OUT)
+GPIO.setup(PIN3, GPIO.OUT)
+GPIO.setup(PIN4, GPIO.OUT)
 #
 # PIN1_STATUS = False
 # PIN2_STATUS = False
