@@ -54,64 +54,116 @@ def pinHandler(request,command,status):
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "forward" and status == "off":
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "backward" and status == "on":
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "backward" and status == "off":
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "right_go" and status == "on":
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "right_go" and status == "off":
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "right_back" and status == "on":
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "right_back" and status == "off":
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "left_go" and status == "on":
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "left_go" and status == "off":
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "left_back" and status == "on":
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "left_back" and status == "off":
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     else:
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
         PIN4_STATUS = False
+        GPIO.output(PIN1, PIN1_STATUS)
+        GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     return
