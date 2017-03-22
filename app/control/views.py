@@ -49,6 +49,8 @@ def statusHandler(request):
         # raise Http404
 
 def pinHandler(request,command,status):
+    print("## command ## : ",command)
+    print("## status ## : ",status)
     if command == "forward" and status == "on":
         PIN1_STATUS = False
         PIN2_STATUS = False
