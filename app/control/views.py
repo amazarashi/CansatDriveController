@@ -3,16 +3,16 @@ from django.http import HttpResponse,Http404
 import json
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.csrf import csrf_exempt
-# import RPi.GPIO as GPIO
-# GPIO.setmode(GPIO.BOARD)
-# PIN1 = 11
-# #p0
-# PIN2 = 12
-# #p5
-# PIN3 = 13
-# #p3
-# PIN4 = 23
-# #p4
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BOARD)
+PIN1 = 11
+#p0
+PIN2 = 12
+#p5
+PIN3 = 13
+#p3
+PIN4 = 23
+#p4
 # GPIO.setup(PIN1, GPIO.OUT)
 # GPIO.setup(PIN2, GPIO.OUT)
 # GPIO.setup(PIN3, GPIO.OUT)
