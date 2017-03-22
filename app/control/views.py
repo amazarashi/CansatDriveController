@@ -5,9 +5,13 @@ from django.views.decorators.csrf import csrf_protect
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
 PIN1 = 11
+#p0
 PIN2 = 12
+#p5
 PIN3 = 13
-PIN4 = 14
+#p3
+PIN4 = 23
+#p4
 GPIO.setup(PIN1, GPIO.OUT)
 GPIO.setup(PIN2, GPIO.OUT)
 GPIO.setup(PIN3, GPIO.OUT)
@@ -18,17 +22,10 @@ PIN2_STATUS = False
 PIN3_STATUS = False
 PIN4_STATUS = False
 
-while PIN1_STATUS:
-    GPIO.output(PIN1, True)
-
-while PIN2_STATUS:
-    GPIO.output(PIN2, True)
-
-while PIN3_STATUS:
-    GPIO.output(PIN3, True)
-
-while PIN4_STATUS:
-    GPIO.output(PIN4, True)
+GPIO.output(PIN1, PIN1_STATUS)
+GPIO.output(PIN2, PIN2_STATUS)
+GPIO.output(PIN3, PIN3_STATUS)
+GPIO.output(PIN4, PIN4_STATUS)
 
 GPIO.cleanup()
 

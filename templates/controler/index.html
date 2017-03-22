@@ -65,7 +65,6 @@ var status = {"stop":"stopping","forward":"Going Forward","backword":"Backing"}
 
 //FORWARD
 $("#forward").on("touchstart",function(event){
-  event.preventDefault();
   updateStatus("forward","on");
 });
 $("#forward").on("touchend",function(){
