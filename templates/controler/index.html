@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="wrapper">
+  <div class="status_area">
+    <div id="status">
+      Stopping
+    </div>
+  </div>
+  <div class="wheel_control_area">
+    <div class="box3">
+      <div class="box2">
+        <div class="imgbox btn btn-defualt" id="left_back">
+          <img src="{{ STATICFILES_DIRS }}/static/img/left.png" alt=""/>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="imgbox btn btn-defualt" id="left_go">
+          <img src="{{ STATICFILES_DIRS }}/static/img/right.png" alt=""/>
+        </div>
+      </div>
+    </div>
+    <div class="box3">
+
+    </div>
+    <div class="box3">
+      <div class="box2">
+        <div class="imgbox btn btn-defualt" id="right_back">
+          <img src="{{ STATICFILES_DIRS }}/static/img/left.png" alt=""/>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="imgbox btn btn-defualt" id="right_go">
+          <img src="{{ STATICFILES_DIRS }}/static/img/right.png" alt=""/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="basic_control_area">
+    <div class="box3">
+      <div class="imgbox basic btn btn-defualt" id="backword">
+        <img src="{{ STATICFILES_DIRS }}/static/img/back.png" alt=""/>
+      </div>
+    </div>
+    <div class="box3">
+
+    </div>
+    <div class="box3">
+      <div class="imgbox basic btn btn-defualt" id="forward">
+        <img src="{{ STATICFILES_DIRS }}/static/img/drive.png" alt=""/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+});
+
+var status = {"stop":"stopping","forward":"Going Forward","backword":"Backing"}
+// $('#surprise_btn').on("click",function() {
+//   self.updateStatus();
+// });
+
+//FORWARD
+$("#forward").on("touchstart",function(event){
+  event.preventDefault();
+  updateStatus("forward","on");
+});
+$("#forward").on("touchend",function(){
+  updateStatus("forward","off");
+});
+
+//BACKWORD
+$("#backword").on("touchstart",function(event){
+  event.preventDefault();
+  updateStatus("backword","on");
+});
+$("#backword").on("touchend",function(){
+  updateStatus("backword","off");
+});
+
+//RIGHT
+$("#right_go").on("touchstart",function(event){
+  event.preventDefault();
+  updateStatus("right_go","on");
+});
+$("#right_go").on("touchend",function(){
+  updateStatus("right_go","off");
+});
+$("#right_back").on("touchstart",function(event){
+  event.preventDefault();
+  updateStatus("right_back","on");
+});
+$("#right_back").on("touchend",function(){
+  updateStatus("right_back","off");
+});
+
+//LEFT
+$("#left_go").on("touchstart",function(event){
+  event.preventDefault();
+  updateStatus("left_go","on");
+});
+$("#left_go").on("touchend",function(){
+  updateStatus("left_go","off");
+});
+$("#left_back").on("touchstart",function(event){
+  event.preventDefault();
+  updateStatus("left_back","on");
+});
+$("#left_back").on("touchend",function(){
+  updateStatus("left_back","off");
+});
+
+function updateStatus(command,status){
+  $.ajax({
+    type:'POST',
+    headers: {"X-CSRFToken": getCookie("csrftoken")},
+    url:'/controller/ajaxStatusHandler/',
+    data:{
+      'command':command,"status":status
+    },
+    dataType:'json',
+    success:function(response){
+      console.log("se");
+      //alert(response.your_surprise_txt);
+    },
+    error: function(response){
+      console.log(response.responseText);
+      //return response;
+    }
+  });
+}
+
+function getCookie(c_name) {
+  if(document.cookie.length > 0) {
+    c_start = document.cookie.indexOf(c_name + "=");
+    if(c_start != -1) {
+      c_start = c_start + c_name.length + 1;
+      c_end = document.cookie.indexOf(";", c_start);
+      if(c_end == -1) c_end = document.cookie.length;
+      return unescape(document.cookie.substring(c_start,c_end));
+    }
+  }
+  return "";
+}
+</script>
+{% endblock %}
