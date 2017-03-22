@@ -71,50 +71,63 @@ var status = {"stop":"stopping","forward":"Going Forward","backword":"Backing"}
 //FORWARD
 $("#forward").on("touchstart",function(event){
   updateStatus("forward","on");
+  $("#status").html("keep true...");
 });
 $("#forward").on("touchend",function(){
   updateStatus("forward","off");
+  $("#status").html("stopping...");
 });
 
 //BACKWORD
 $("#backword").on("touchstart",function(event){
+  $("#status").html("backing...");
   event.preventDefault();
   updateStatus("backword","on");
 });
 $("#backword").on("touchend",function(){
   updateStatus("backword","off");
+  $("#status").html("stopping...");
 });
 
 //RIGHT
 $("#right_go").on("touchstart",function(event){
   event.preventDefault();
+  $("#status").html("handling...");
   updateStatus("right_go","on");
 });
 $("#right_go").on("touchend",function(){
   updateStatus("right_go","off");
+  $("#status").html("stopping...");
 });
 $("#right_back").on("touchstart",function(event){
   event.preventDefault();
+  $("#status").html("handling...");
   updateStatus("right_back","on");
 });
 $("#right_back").on("touchend",function(){
   updateStatus("right_back","off");
+  $("#status").html("handling...");
+  $("#status").html("stopping...");
 });
 
 //LEFT
 $("#left_go").on("touchstart",function(event){
   event.preventDefault();
+  $("#status").html("handling...");
   updateStatus("left_go","on");
 });
 $("#left_go").on("touchend",function(){
   updateStatus("left_go","off");
+  $("#status").html("stopping...");
 });
 $("#left_back").on("touchstart",function(event){
   event.preventDefault();
   updateStatus("left_back","on");
+  $("#status").html("handling...");
 });
 $("#left_back").on("touchend",function(){
   updateStatus("left_back","off");
+  $("#status").html("stopping...");
 });
 
 function updateStatus(command,status){
