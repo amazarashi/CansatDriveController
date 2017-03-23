@@ -43,8 +43,10 @@
         <img src="{{ STATICFILES_DIRS }}/static/img/back.png" alt=""/>
       </div>
     </div>
-    <div class="box3">
-
+    <div class="box3" style="text-align:center;">
+      <div class="btn btn-default" id="allclear">
+        All Clear
+      </div>
     </div>
     <div class="box3">
       <div class="imgbox basic btn btn-defualt" id="forward">
@@ -67,6 +69,12 @@ var status = {"stop":"stopping","forward":"Going Forward","backword":"Backing"}
 // $('#surprise_btn').on("click",function() {
 //   self.updateStatus();
 // });
+
+
+$("#allclear").on("touchstart",function(event){
+  $("#status").html("All Clear...");
+  updateStatus("allclear","on");
+});
 
 //FORWARD
 $("#forward").on("touchstart",function(event){
