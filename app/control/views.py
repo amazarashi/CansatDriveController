@@ -66,11 +66,13 @@ def pinHandler(request,command,status):
     ## - go(PIN3:ON,PIN4:OFF)
     ## - back(PIN3:OFF,PIN4:ON)
     if command == "forward" and status == "on":
+        print("forward : on")
         PIN1_STATUS = True
         PIN3_STATUS = True
-        GPIO.output(PIN1, PIN1_STATUS)
         GPIO.output(PIN3, PIN3_STATUS)
+        GPIO.output(PIN1, PIN1_STATUS)
     elif command == "forward" and status == "off":
+        print("forward : off")
         PIN1_STATUS = False
         PIN2_STATUS = False
         PIN3_STATUS = False
