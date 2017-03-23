@@ -31,9 +31,9 @@ GPIO.setup(PIN4, GPIO.OUT)
 # PIN3_STATUS = False
 # PIN4_STATUS = False
 #
-# GPIO.output(PIN1, PIN1_STATUS)
+GPIO.output(PIN1, True)
 # GPIO.output(PIN2, PIN2_STATUS)
-# GPIO.output(PIN3, PIN3_STATUS)
+GPIO.output(PIN3, True)
 # GPIO.output(PIN4, PIN4_STATUS)
 #
 # GPIO.cleanup()
