@@ -18,7 +18,7 @@ PIN2 = 12
 ## - back(PIN3:OFF,PIN4:ON)
 PIN3 = 13
 #p3
-PIN4 = 23
+PIN4 = 15
 #p4
 
 GPIO.setup(PIN1, GPIO.OUT)
