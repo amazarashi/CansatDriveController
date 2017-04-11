@@ -4,8 +4,8 @@ import json
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.csrf import csrf_exempt
 import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BOARD)
 
+GPIO.setmode(GPIO.BOARD)
 ## RIGHT
 ## - go(PIN1:ON,PIN2:OFF)
 ## - back(PIN1:OFF,PIN2:ON)
@@ -16,27 +16,15 @@ PIN2 = 12
 ## LEFT
 ## - go(PIN3:ON,PIN4:OFF)
 ## - back(PIN3:OFF,PIN4:ON)
-PIN3 = 13
+PIN3 = 15
 #p3
-PIN4 = 15
+PIN4 = 13
 #p4
-
 GPIO.setup(PIN1, GPIO.OUT)
 GPIO.setup(PIN2, GPIO.OUT)
 GPIO.setup(PIN3, GPIO.OUT)
 GPIO.setup(PIN4, GPIO.OUT)
 
-# PIN1_STATUS = False
-# PIN2_STATUS = False
-# PIN3_STATUS = False
-# PIN4_STATUS = False
-#
-# GPIO.output(PIN1, True)
-# GPIO.output(PIN2, PIN2_STATUS)
-# GPIO.output(PIN3, True)
-# GPIO.output(PIN4, PIN4_STATUS)
-#
-# GPIO.cleanup()
 
 def controller(request):
     if request.method == 'GET':
@@ -130,4 +118,7 @@ def pinHandler(request,command,status):
         GPIO.output(PIN2, PIN2_STATUS)
         GPIO.output(PIN3, PIN3_STATUS)
         GPIO.output(PIN4, PIN4_STATUS)
+    return
+
+def authDrive(request):
     return
