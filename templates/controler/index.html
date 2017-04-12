@@ -39,7 +39,7 @@
   </div>
   <div class="basic_control_area">
     <div class="box3">
-      <div class="imgbox basic btn btn-defualt" id="backword">
+      <div class="imgbox basic btn btn-defualt" id="backward">
         <img src="{{ STATICFILES_DIRS }}/static/img/back.png" alt=""/>
       </div>
     </div>
@@ -65,7 +65,7 @@
 $(document).ready(function() {
 });
 
-var status = {"stop":"stopping","forward":"Going Forward","backword":"Backing"}
+var status = {"stop":"stopping","forward":"Going Forward","backward":"Backing"}
 // $('#surprise_btn').on("click",function() {
 //   self.updateStatus();
 // });
@@ -87,14 +87,14 @@ $("#forward").on("touchend",function(){
 });
 
 //BACKWORD
-$("#backword").on("touchstart",function(event){
+$("#backward").on("touchstart",function(event){
   $("#status").html("backing...");
   event.preventDefault();
-  updateStatus("backword","on");
+  updateStatus("backward","on");
 });
-$("#backword").on("touchend",function(){
+$("#backward").on("touchend",function(){
   $("#status").html("stopping...");
-  updateStatus("backword","off");
+  updateStatus("backward","off");
 });
 
 //RIGHT
