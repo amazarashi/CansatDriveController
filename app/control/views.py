@@ -70,10 +70,10 @@ def pinHandler(request,command,status):
         GPIO.output(PIN3, PIN3_STATUS)
         GPIO.output(PIN4, PIN4_STATUS)
     elif command == "backward" and status == "on":
-        PIN2_STATUS = True
-        #PIN4_STATUS = True
-        GPIO.output(PIN2, PIN2_STATUS)
-        #GPIO.output(PIN4, PIN4_STATUS)
+        #PIN2_STATUS = True
+        PIN4_STATUS = True
+        #GPIO.output(PIN2, PIN2_STATUS)
+        GPIO.output(PIN4, PIN4_STATUS)
     elif command == "backward" and status == "off":
         PIN1_STATUS = False
         PIN2_STATUS = False
